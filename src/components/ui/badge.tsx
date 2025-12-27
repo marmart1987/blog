@@ -29,15 +29,19 @@ function Badge({
   className,
   variant,
   asChild = false,
+  classes,
   ...props
 }: React.ComponentProps<'span'> &
-  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
+  VariantProps<typeof badgeVariants> & { asChild?: boolean; classes?: string }) {
   const Comp = asChild ? SlotPrimitive.Root : 'span'
+  
+  const finalClasses = classes || className 
+  // console.log(cn(badgeVariants({ variant }), finalClasses))
 
   return (
     <Comp
       data-slot="badge"
-      className={cn(badgeVariants({ variant }), className)}
+      className={cn(badgeVariants({ variant }), finalClasses)}
       {...props}
     />
   )

@@ -2,29 +2,71 @@
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
-import { badgeVariants } from '@/components/ui/badge'
+import { Badge } from '@/components/ui/badge'
 import Layout from '@/layouts/Layout.astro'
 import { getSortedTags } from '@/lib/data-utils'
 import { Icon } from 'astro-icon/components'
+const stringToTailwindColor = (tag: string) => {
+  const colors = [
+    'red',
+    'orange',
+    'amber',
+    'yellow',
+    'lime',
+    'green',
+    'emerald',
+    'teal',
+    'cyan',
+    // 'sky',
+    'blue',
+    'indigo',
+    'violet',
+    'purple',
+    'fuchsia',
+    'pink',
+    'rose',
+    // 'slate',
+    // 'gray',
+    // 'zinc',
+    // 'neutral',
+    // 'stone',
+  ]
+  const shades = [300, 400, 500, 600, 700]
+  const colorPool = []
 
+  for (const color of colors)
+    for (const shade of shades) colorPool.push(`${color}-${shade}`)
+
+  let hash = 0
+  for (let i = 0, len = tag.length; i < len; i++) {
+    let chr = tag.charCodeAt(i)
+    hash = (hash << 5) - hash + chr
+    hash |= 0 // Convert to 32bit integer
+  }
+
+  return colorPool[Math.pow(hash, 24) % colorPool.length]
+}
+const getClasses = (tag: string) => {
+  let _color = stringToTailwindColor(tag)
+  let _classes = `bg-${_color} dark:bg-${_color} text-secondary-foreground gap-x-1 text-xs dark:text-white flex items-center` //
+  return _classes
+}
 const sortedTags = await getSortedTags()
 ---
 
 <Layout class="max-w-3xl">
   <PageHead slot="head" title="Tags" />
   <Breadcrumbs items={[{ label: 'Tags', icon: 'lucide:tags' }]} />
-
   <div class="flex flex-col gap-4">
     <div class="flex flex-wrap gap-2">
-      {
+            {
         sortedTags.map(({ tag, count }) => (
-          <Link
-            href={`/tags/${tag}`}
-            class={badgeVariants({ variant: 'muted' })}
-          >
-            <Icon name="lucide:hash" class="size-3" />
-            {tag}
-            <span class="text-muted-foreground ml-1.5">({count})</span>
+          <Link href={`/tags/${tag}`}>
+            <Badge variant="muted" classes={getClasses(tag)}>
+              <Icon name="lucide:hash" class="size-3" />
+              <span class="text-xl font-semibold">{tag}</span>
+              <span class="text-muted-foreground ml-1">{count}</span>
+            </Badge>
           </Link>
         ))
       }
