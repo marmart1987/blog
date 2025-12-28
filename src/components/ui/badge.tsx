@@ -36,8 +36,6 @@ function Badge({
   const Comp = asChild ? SlotPrimitive.Root : 'span'
   
   const finalClasses = classes || className 
-  // console.log(cn(badgeVariants({ variant }), finalClasses))
-
   return (
     <Comp
       data-slot="badge"
