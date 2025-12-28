@@ -53,24 +53,29 @@ export const ICON_MAP: IconMap = {
   Email: 'lucide:mail',
   RSS: 'lucide:rss',
 }
-export const colors = {
-  "v1.6.0": "yellow",
-  "v1.5.0": "purple"
+// export const colors = {
+//   "v1.6.0": "yellow",
+//   "v1.5.0": "purple"
+// }
+
+// function updateColors(input: Record<string, string>): Record<string, string> {
+//   const result: Record<string, string> = {};
+
+//   for (const key in input) {
+//     if (input.hasOwnProperty(key)) {
+//       result[key] = `bg-${input[key]}-200 dark:bg-${input[key]}-800`;
+//     }
+//   }
+
+//   return result;
+// }
+
+
+// export const TAG_CLASSES =  updateColors(colors);
+
+export const TAG_CLASSES: Record<string,string> =  {
+  "v1.6.0": "bg-yellow-300 dark:bg-yellow-800",
+  "v1.5.0": "bg-purple-300 dark:bg-purple-800",
+  "v1.3.0": "bg-slate-300 dark:bg-slate-800",
+  "v1.0.0": "bg-cyan-300 dark:bg-cyan-800", 
 }
-
-function updateColors(input: Record<string, string>): Record<string, string> {
-  const result: Record<string, string> = {};
-
-  for (const key in input) {
-    if (input.hasOwnProperty(key)) {
-      result[key] = `bg-${input[key]}-200 dark:bg-${input[key]}-800`;
-    }
-  }
-
-  return result;
-}
-
-
-export const TAG_CLASSES =  updateColors(colors);
-
-console.log(TAG_CLASSES);
