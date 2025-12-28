@@ -1,7 +1,7 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'astro-erudite',
+  title: 'unnervingcircles',
   description:
     'astro-erudite is a opinionated, unstyled blogging template—built with Astro, Tailwind, and shadcn/ui.',
   href: 'https://astro-erudite.vercel.app',
@@ -17,8 +17,8 @@ export const NAV_LINKS: SocialLink[] = [
     label: 'blog',
   },
   {
-    href: '/authors',
-    label: 'authors',
+    href: '/tags',
+    label: 'tags',
   },
   {
     href: '/about',
@@ -27,18 +27,18 @@ export const NAV_LINKS: SocialLink[] = [
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  {
-    href: 'https://github.com/jktrn',
-    label: 'GitHub',
-  },
-  {
-    href: 'https://twitter.com/enscry',
-    label: 'Twitter',
-  },
-  {
-    href: 'mailto:jason@enscribe.dev',
-    label: 'Email',
-  },
+  // {
+  //   href: 'https://github.com/jktrn',
+  //   label: 'GitHub',
+  // },
+  // {
+  //   href: 'https://twitter.com/enscry',
+  //   label: 'Twitter',
+  // },
+  // {
+  //   href: 'mailto:jason@enscribe.dev',
+  //   label: 'Email',
+  // },
   {
     href: '/rss.xml',
     label: 'RSS',
@@ -52,4 +52,30 @@ export const ICON_MAP: IconMap = {
   Twitter: 'lucide:twitter',
   Email: 'lucide:mail',
   RSS: 'lucide:rss',
+}
+// export const colors = {
+//   "v1.6.0": "yellow",
+//   "v1.5.0": "purple"
+// }
+
+// function updateColors(input: Record<string, string>): Record<string, string> {
+//   const result: Record<string, string> = {};
+
+//   for (const key in input) {
+//     if (input.hasOwnProperty(key)) {
+//       result[key] = `bg-${input[key]}-200 dark:bg-${input[key]}-800`;
+//     }
+//   }
+
+//   return result;
+// }
+
+
+// export const TAG_CLASSES =  updateColors(colors);
+
+export const TAG_CLASSES: Record<string,string> =  {
+  "v1.6.0": "bg-yellow-300 dark:bg-yellow-800",
+  "v1.5.0": "bg-purple-300 dark:bg-purple-800",
+  "v1.3.0": "bg-slate-300 dark:bg-slate-800",
+  "v1.0.0": "bg-cyan-300 dark:bg-cyan-800", 
 }
