@@ -56,11 +56,11 @@
 
 [data-theme='dark'] {
   --background: oklch(0.145 0 0);
-  --foreground: oklch(0.95 0.12 250);
+  --foreground: oklch(0.95 0.12 250); 
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.6 0.08 250);
+  --muted-foreground: oklch(0.7 0.08 250);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(0.6735 0.3123 324 /40%);
   --ring: oklch(0.556 0 0);

@@ -144,17 +144,21 @@ const tocSections = await getTOCSections(currentPostId)
                       height={20}
                       class="rounded-full"
                     />
-                    {author.isRegistered ? (
-                      <Link
-                        href={`/authors/${author.id}`}
-                        underline
-                        class="text-foreground"
-                      >
-                        <span>{author.name}</span>
-                      </Link>
-                    ) : (
-                      <span>{author.name}</span>
-                    )}
+                    <Link href="/about" underline class="text-foreground"> <span>{author.name}</span></Link>
+                    {
+                    
+                    // author.isRegistered ? (
+                    //   <Link
+                    //     href={`/authors/${author.id}`}
+                    //     underline
+                    //     class="text-foreground"
+                    //   >
+                    //     <span>{author.name}</span>
+                    //   </Link>
+                    // ) : (
+                    //   <span>{author.name}</span>
+                    // )
+                    }
                   </div>
                 ))}
               </div>
