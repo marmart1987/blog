@@ -1,14 +1,14 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'unnervingcircles',
+  title: 'unnervingCircles',
   description:
-    'astro-erudite is a opinionated, unstyled blogging template—built with Astro, Tailwind, and shadcn/ui.',
+    'TODO',
   href: 'https://astro-erudite.vercel.app',
-  author: 'jktrn',
+  author: 'Martin Thomas',
   locale: 'en-US',
   featuredPostCount: 2,
-  postsPerPage: 3,
+  postsPerPage: 5,
 }
 
 export const NAV_LINKS: SocialLink[] = [
@@ -53,25 +53,6 @@ export const ICON_MAP: IconMap = {
   Email: 'lucide:mail',
   RSS: 'lucide:rss',
 }
-// export const colors = {
-//   "v1.6.0": "yellow",
-//   "v1.5.0": "purple"
-// }
-
-// function updateColors(input: Record<string, string>): Record<string, string> {
-//   const result: Record<string, string> = {};
-
-//   for (const key in input) {
-//     if (input.hasOwnProperty(key)) {
-//       result[key] = `bg-${input[key]}-200 dark:bg-${input[key]}-800`;
-//     }
-//   }
-
-//   return result;
-// }
-
-
-// export const TAG_CLASSES =  updateColors(colors);
 
 export const TAG_CLASSES: Record<string,string> =  {
   "v1.6.0": "bg-yellow-300 dark:bg-yellow-800",
