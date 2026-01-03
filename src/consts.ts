@@ -55,8 +55,8 @@ export const ICON_MAP: IconMap = {
 }
 
 export const TAG_CLASSES: Record<string,string> =  {
-  "v1.6.0": "bg-yellow-300 dark:bg-yellow-800",
-  "v1.5.0": "bg-purple-300 dark:bg-purple-800",
-  "v1.3.0": "bg-slate-300 dark:bg-slate-800",
-  "v1.0.0": "bg-cyan-300 dark:bg-cyan-800", 
+  "other": "bg-yellow-300 dark:bg-yellow-800",
+  // "v1.5.0": "bg-purple-300 dark:bg-purple-800",
+  // "v1.3.0": "bg-slate-300 dark:bg-slate-800",
+  // "v1.0.0": "bg-cyan-300 dark:bg-cyan-800", 
 }
